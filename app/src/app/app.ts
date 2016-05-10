@@ -10,7 +10,7 @@ export default class MyApp extends App {
 
         router.configure([
             { pattern: '', view: HomeViewControl },
-            {pattern: '/singleview', view: SingleviewViewControl},
+            {pattern: 'singleview/:contactid', view: SingleviewViewControl},
         ]);
     }
 

@@ -2,11 +2,17 @@
 <plat-input class="input" type="text" placeholder="First & Last Name" plat-bind="nameInput"></plat-input>
 <plat-input class="input" type="text" placeholder="Email Address" plat-bind="emailInput"></plat-input>
 <plat-input class="input" type="number" placeholder="Phone Number" plat-bind="phoneInput"></plat-input>
-<plat-button class="button" plat-tap="***">Add to Contacts</plat-button>
+<plat-button class="button" plat-tap="addToContacts()">Add to Contacts</plat-button>
 
-<div class="contacts">
-    <div class="contact" plat-foreach="***">
-        <span class="contactline1">***</span>
-        <plat-button class="single-contact" plat-tap="***">See Full Contact Information</plat-button>
-    </div>
-</div>
+<!--<div class="contactsContainer">
+    <ul class="contact-list" plat-foreach plat-context="contacts">
+        <li>{{name}}</li>
+    </ul>
+    <plat-button class="singleContact" plat-tap="seeSingleContact(nameInput)">See Full Contact Information</plat-button>
+</div>-->
+
+<!--I CAN'T GET THIS TO WORK. WHEN IT'S NOT COMMENTED OUT,
+THE PAGE DOESN'T SHOW ANYTHING-->
+
+
+
