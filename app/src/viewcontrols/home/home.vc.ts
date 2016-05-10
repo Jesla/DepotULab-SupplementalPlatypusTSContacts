@@ -16,6 +16,10 @@ export default class HomeViewControl extends BaseViewControl {
     constructor(private contacts: ContactsRepository) {
         super();
     }
+    
+    navigatedTo() {
+       this.context.contacts = this.contacts.getAllContacts();
+    }
 
     addToContacts(): void {
         let singleContact: models.ISingleContact = {
@@ -25,7 +29,6 @@ export default class HomeViewControl extends BaseViewControl {
         };
 
         this.contacts.addContact(singleContact);
-        this.context.contacts.push(singleContact)
     }
 
     seeSingleContact(nameInput: string): void {
@@ -34,11 +37,6 @@ export default class HomeViewControl extends BaseViewControl {
                 contactid: nameInput,
             }
         });
-    }
-    
-    
-    getAllContacts(nameInput: string): void {
-        this.context.contacts
     }
     
 }
