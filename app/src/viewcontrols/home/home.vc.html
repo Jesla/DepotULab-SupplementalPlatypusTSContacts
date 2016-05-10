@@ -4,15 +4,14 @@
 <plat-input class="input" type="number" placeholder="Phone Number" plat-bind="phoneInput"></plat-input>
 <plat-button class="button" plat-tap="addToContacts()">Add to Contacts</plat-button>
 
-<!--<div class="contactsContainer">
-    <ul class="contact-list" plat-foreach plat-context="contacts">
-        <li>{{name}}</li>
-    </ul>
-    <plat-button class="singleContact" plat-tap="seeSingleContact(nameInput)">See Full Contact Information</plat-button>
-</div>-->
+<div class="contactsContainer">
+<ul plat-control="plat-foreach" plat-context="contacts" class="contact-list">
+    <li>{{nameInput}}</li>
+    <plat-button class="single-contact" plat-tap="seeSingleContact(nameInput)">See Full Contact Information</plat-button>
+</ul>
 
-<!--I CAN'T GET THIS TO WORK. WHEN IT'S NOT COMMENTED OUT,
-THE PAGE DOESN'T SHOW ANYTHING-->
+</div>
+
 
 
 

@@ -10,6 +10,7 @@ export default class HomeViewControl extends BaseViewControl {
         nameInput: "",
         emailInput: "",
         phoneInput: "",
+        contacts: []
     };
 
     constructor(private contacts: ContactsRepository) {
@@ -23,22 +24,21 @@ export default class HomeViewControl extends BaseViewControl {
             phoneInput: this.context.phoneInput
         };
 
-        this.contacts.addContact(singleContact).then((success) => {
-            console.log(success);
-            this.navigator.navigate(HomeViewControl);
-        }, (err) => {
-            console.log(err);
-        });
+        this.contacts.addContact(singleContact);
+        this.context.contacts.push(singleContact)
     }
 
-    seeSingleContact(): void {
+    seeSingleContact(nameInput: string): void {
         this.navigator.navigate("singleview-vc", {
             parameters: {
-                nameContact: this.context.nameInput,
-                emailContact: this.context.emailInput,
-                phoneContact: this.context.phoneInput
+                contactid: nameInput,
             }
         });
+    }
+    
+    
+    getAllContacts(nameInput: string): void {
+        this.context.contacts
     }
     
 }

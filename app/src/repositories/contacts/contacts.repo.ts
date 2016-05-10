@@ -1,24 +1,24 @@
 import {async, register} from 'platypus';
 import BaseRepository from '../base/base.repo';
-import ContactserviceService from '../../services/contactservice/contactservice.svc';
 
 export default class ContactsRepository extends BaseRepository {
 
-    constructor(private contactSvc: ContactserviceService) {
-        super();
+    contactsArray: Array<models.ISingleContact> = [];
+
+    getAllContacts() {
+        return this.contactsArray;
     }
 
-    getAllContacts(): async.IThenable<Array<models.ISingleContact>> {
-        return this.contactSvc.getAllContacts();
+    seeSingleContact(nameInput: string) {
+        for (let i = 0; i < this.contactsArray.length; i++) {
+            if (this.contactsArray[i].nameInput === nameInput) {
+                return this.contactsArray[i];
+            }
+        }
     }
-
-    seeSingleContact(nameInput: string): async.IThenable<models.ISingleContact> {
-        return this.contactSvc.seeSingleContact(nameInput);
-    }
-
-    addContact(contact: models.ISingleContact): async.IThenable<string> {
-        return this.contactSvc.addContact(contact);
+    addContact(contact: models.ISingleContact) {
+        this.contactsArray.push(contact)
     }
 }
 
-register.injectable('contacts-repo', ContactsRepository, [ContactserviceService]);
+register.injectable('contacts-repo', ContactsRepository);
