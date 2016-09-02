@@ -16,9 +16,9 @@ export default class HomeViewControl extends BaseViewControl {
     constructor(private contacts: ContactsRepository) {
         super();
     }
-    
+
     navigatedTo() {
-       this.context.contacts = this.contacts.getAllContacts();
+        this.context.contacts = this.contacts.getAllContacts();
     }
 
     addToContacts(): void {
@@ -38,7 +38,6 @@ export default class HomeViewControl extends BaseViewControl {
             }
         });
     }
-    
 }
 
 register.viewControl('home-vc', HomeViewControl, [ContactsRepository]);

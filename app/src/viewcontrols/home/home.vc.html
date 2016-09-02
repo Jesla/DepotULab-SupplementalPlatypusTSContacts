@@ -5,13 +5,9 @@
 <plat-button class="button" plat-tap="addToContacts()">Add to Contacts</plat-button>
 
 <div class="contactsContainer">
-<ul plat-control="plat-foreach" plat-context="contacts" class="contact-list">
-    <li>{{nameInput}}</li>
-    <plat-button class="single-contact" plat-tap="seeSingleContact(nameInput)">See Full Contact Information</plat-button>
-</ul>
+    <ul plat-control="plat-foreach" plat-context="contacts" class="contact-list">
+        <li>{{nameInput}}</li>
+        <plat-button class="single-contact" plat-tap="seeSingleContact(nameInput)">See Full Contact Information</plat-button>
+    </ul>
 
 </div>
-
-
-
-
